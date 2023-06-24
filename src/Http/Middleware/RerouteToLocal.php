@@ -30,12 +30,14 @@ class RerouteToLocal
 
             $finalRequestUri = '/' . implode('/', $urlArray);
 
-            $referer = $request->server->get('HTTP_REFERER');
+            $final_request = Request::create(
+                $finalRequestUri,
+                $request->method(),
+                $request->all(),
+                $request->cookies->all(),
+                $request->allFiles());
 
-            $finalReferer = \Str::replace($request->getRequestUri(), $finalRequestUri, $referer);
-
-            $request->server->set('HTTP_REFERER', $finalReferer);
-            $request->server->set('REQUEST_URI', $finalRequestUri);
+            return $next($final_request);
         }
 
         return $next($request);
