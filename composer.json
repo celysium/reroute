@@ -1,0 +1,28 @@
+{
+  "name": "celysium/reroute",
+  "description": "Reroute all API gateway requests to localhost url",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Mehdi Alikhani",
+      "email": "mahdi.alikhani855@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Celysium\\Reroute\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "laravel/framework": "^9.0|^10.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Celysium\\Reroute\\RerouteServiceProvider"
+      ]
+    }
+  }
+}
