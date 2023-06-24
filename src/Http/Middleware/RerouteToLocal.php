@@ -1,6 +1,6 @@
 <?php
 
-namespace Celysium\Http\Middleware;
+namespace Celysium\Reroute\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

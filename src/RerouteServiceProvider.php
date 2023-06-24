@@ -1,5 +1,7 @@
 <?php
 
+namespace Celysium\Reroute;
+
 use Illuminate\Support\ServiceProvider;
 use Celysium\Http\Middleware\RerouteToLocal;
 class RerouteServiceProvider extends ServiceProvider
