@@ -37,6 +37,10 @@ class RerouteToLocal
                 $request->cookies->all(),
                 $request->allFiles());
 
+            foreach ($request->headers as $key => $header) {
+                $final_request->headers->set($key, $header);
+            }
+
             return $next($final_request);
         }
 
