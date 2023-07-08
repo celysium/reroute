@@ -25,8 +25,10 @@ class RerouteToLocal
 
         $urlArray = explode('/', $requestedUri);
 
-        if (count($urlArray) > 4 && $urlArray[3] === env('MICROSERVICE_PREFIX')) {
-            unset($urlArray[3]);
+        $checkUrlForMicroSlug = array_search(env('MICROSERVICE_PREFIX'), $urlArray);
+
+        if ($checkUrlForMicroSlug) {
+            unset($urlArray[$checkUrlForMicroSlug]);
 
             $finalRequestUri = '/' . implode('/', $urlArray);
 
